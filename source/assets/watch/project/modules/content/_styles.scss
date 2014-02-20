@@ -1,0 +1,163 @@
+.main {
+
+  nav {
+
+    // Tablet Portrait --> Tablet Landscape --> Desktop
+    @include from(3) {
+
+      height: 80px;
+    }
+
+    // Mobile Portrait --> Mobile Landscape
+    @include to(2) {
+
+      height: 180px;
+    }
+
+    .nav {
+
+      background: $color-light;
+      width: 100%;
+      padding: 10px;
+
+      li:hover {
+
+        a {
+
+          background: $color-hover !important;
+        }
+      }
+
+      li {
+
+        text-align: center;
+
+        @include letterpress(black);
+
+        a {
+          
+          background: $color-enabled;
+        }
+
+        // Tablet Portrait --> Tablet Landscape --> Desktop
+        @include from(3) {
+
+          float: left;
+          display: inline-block;
+
+          a {
+
+            margin-right: 8px;
+            padding: 0.25rem 1.35rem;
+          }
+        }
+
+        // Mobile Portrait --> Mobile Landscape
+        @include to(2) {
+
+          float: none;
+          display: block;
+
+          a {
+
+            display: block;
+            margin-bottom: 1px;
+            padding: 0.25rem;
+            width: 100%;
+            @include position(relative, 0 0px 0 0px);
+          }
+
+          @include clearfix;
+        }
+
+        a {
+
+          color: $color-light;
+          text-decoration: none;
+        }
+
+        .active {
+
+          background: $color-active;
+        }
+      }
+    }
+  }
+
+  .view {
+
+    margin-bottom: 35px;
+
+    @include shift($view-columns-padding);
+    @include span-columns($view-columns-span);
+
+    @include clearfix;
+
+    .page-title {
+
+      height: 3rem;
+      margin-left: -2px;
+
+      h2 {
+
+        width: 100%;
+        height: 3rem;
+        background: $color-light;
+      }
+    }
+
+    // Tablet Portrait --> Tablet Landscape --> Desktop
+    @include from(3) {
+
+      .page-title {
+
+        display: block;
+        font-size: $gamma + px;
+        margin-top: 8px;
+      }
+
+      .page-title-sub {
+
+        font-size: $gamma + px;
+      }
+    }
+
+    // Mobile Portrait --> Mobile Landscape
+    @include to(2) {
+
+      .page-title {
+
+        display: none;
+        font-size: $gamma + px;
+        margin-top: 8px;
+      }
+
+      .page-title-sub {
+
+        font-size: $delta + px;
+      }
+    }
+
+    .anim.ng-enter {
+      transition: opacity 1s;
+      opacity: 0.0;
+    }
+
+    .anim.ng-enter-active {
+      opacity: 1.0;
+    }
+
+    .anim.ng-leave {
+        display: none;
+    }
+  }
+}
+
+#loading {
+    position: absolute;
+    width: 300px;
+    top: 10px;
+    left: 500px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    z-index: $z-index-loader;
+}

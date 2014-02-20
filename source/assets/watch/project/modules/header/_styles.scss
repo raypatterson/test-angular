@@ -1,0 +1,36 @@
+header {
+
+  @include background-fill-gradient;
+
+  @include letterpress(black, 1);
+
+  h1 {
+
+    overflow: hidden;
+    color: $color-light;
+    padding-left: 2px;
+    margin-bottom: 0;
+
+    // Tablet Landscape --> Desktop
+    @include from(4) {
+      font-size: $giga + px;
+    }
+
+    // Tablet Portrait
+    @include at(3) {
+      font-size: $mega + px;
+    }
+
+    // Mobile Landscape
+    @include at(2) {
+      font-size: $gamma + px;
+      margin-bottom: 5px;
+    }
+
+    // Mobile Portrait
+    @include at(1) {
+      font-size: $delta + px;
+      margin-bottom: 5px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<div class="main ng-cloak" ng-controller="MainCtrl">
+  
+  <!-- <div class="pull-right label">Current route: <span ng-bind="$routeSegment.name"></span></div> -->
+
+  <nav class="main-nav">
+
+    <ul class="nav" sticky-element sticky-top="0" sticky-index="2000">
+      <li ng-click="resetScroll()"><a ng-class="{active: $routeSegment.startsWith('home')}" href="#/home">Home</a></li>
+      <li ng-click="resetScroll()"><a ng-class="{active: $routeSegment.startsWith('products')}" href="#/products">Products</a></li>
+      <li ng-click="resetScroll()"><a ng-class="{active: $routeSegment.startsWith('signup')}" href="#/sign-up">Sign Up</a></li>
+      <li ng-click="resetScroll()"><a ng-class="{active: $routeSegment.startsWith('signin')}" href="#/sign-in">Sign In</a></li>
+    </ul>
+
+  </nav>
+
+  <div class="view" id="content">
+    <div class="anim" app-view-segment="0"></div>
+  </div>
+
+  <div id=loading class=alert ng-show="loader.show">Loading...</div>
+
+</div>

@@ -1,0 +1,138 @@
+/**
+ * Measurments
+ */
+
+$iphone-portrait: (max-width 320px) (orientation portrait);
+$iphone-landscape: (max-width 480px) (orientation landscape);
+$ipad-portrait: (max-width 480px) (orientation portrait);
+$ipad-landscape: (max-width 760px) (orientation landscape);
+
+$slicer-breakpoints: 0 320px 480px 768px 1088px;
+//   1   Mobile Portrait        0px  -->   320px
+//   2   Mobile Landscape     320px  -->   480px
+//   3   Tablet Portrait      480px  -->   768px
+//   4   Tablet Landscape     768px  -->  1088px
+//   5   Desktop             1088px  -->  ????px
+
+$view-columns-padding: 1;
+$view-columns-span: $grid-columns - ( $view-columns-padding * 2 );
+
+/**
+ * Colors
+ */
+
+$color-primary-1: #01939A;
+$color-primary-2: #1D7074;
+$color-primary-3: #006064;
+$color-primary-4: #34C6CD;
+$color-primary-5: #5DC8CD;
+
+$color-secondary-a-1: #133CAC;
+$color-secondary-a-2: #2B4281;
+$color-secondary-a-3: #062270;
+$color-secondary-a-4: #476DD5;
+$color-secondary-a-5: #6D89D5;
+
+$color-secondary-b-1: #00CC00;
+$color-secondary-b-2: #269926;
+$color-secondary-b-3: #008500;
+$color-secondary-b-4: #39E639;
+$color-secondary-b-5: #67E667;
+
+$color-complement-1: #FF7600;
+$color-complement-2: #BF7230;
+$color-complement-3: #A64D00;
+$color-complement-4: #FF9840;
+$color-complement-5: #FFB473;
+
+$color-white-1: tint($color-primary-1, 98%);
+$color-white-2: tint($color-primary-1, 95%);
+
+$color-type: $color-primary-2;
+$color-light: $color-white-1;
+
+$color-basic-light: $color-primary-4;
+$color-basic: $color-primary-1;
+$color-basic-dark: $color-primary-2;
+
+$color-enabled: $color-primary-4;
+$color-disabled: $color-primary-4;
+
+$color-active: $color-secondary-b-1;
+$color-inactive: $color-secondary-b-1;
+
+$color-hover: $color-secondary-b-5;
+
+/**
+ * Layers
+ */
+
+$z-index-whitespace: 1000;
+
+$z-index-footer: $z-index-whitespace * 10;
+$z-index-loader: $z-index-whitespace * 9;
+$z-index-overlay: $z-index-whitespace * 8;
+/* empty */
+$z-index-main-menu: $z-index-whitespace * 2;
+$z-index-products: $z-index-whitespace * 1;
+
+/**
+ * Rules
+ */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+
+  font-family: 'Lato', sans-serif;
+  background: $color-light;
+  color: $color-type;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+  color: $color-type;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  margin: 1.5em 0;
+  @include background-image(linear-gradient(left, rgba($color-basic, 0), rgba($color-basic, 0.75), rgba($color-basic, 0)));
+}
+
+.top-level-container {
+
+  @include outer-container;
+}
+
+.spinner {
+
+  @include position(absolute, 25% 0px 0px 50%);
+}
+
+/**
+ * Mixins
+ */
+
+@mixin cursor {
+  cursor: pointer;
+  cursor: hand;
+}
+
+@mixin letterpress($color: $color-light, $opacity: 0.5) {
+  @include text-shadow(0 1px 0 rgba($color, $opacity));
+}
+
+@mixin text-gradient($color-start: white, $color-stop: white) {
+  -webkit-mask-image: -webkit-linear-gradient(top, rgba(red,1), rgba(red,1) 50%, rgba(red,1));
+  -webkit-mask-image: linear-gradient(top, rgba(red,1), rgba(red,1) 50%, rgba(red,1));
+  // -webkit-mask-image: -webkit-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,1) 50%, rgba(255,255,255,1));
+  // -webkit-mask-image: linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,1) 50%, rgba(255,255,255,1));
+}
+
+@mixin background-fill-gradient {
+  @include background-image( radial-gradient(50% 50%, circle cover, $color-primary-1 50%, $color-primary-2 100%) );
+}

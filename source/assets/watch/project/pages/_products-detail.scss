@@ -1,0 +1,59 @@
+.zoomContainer {
+  z-index: $z-index-overlay + 30; 
+}
+
+#demo-container {
+  position: absolute;
+  z-index: $z-index-overlay + 500; 
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 2000px;
+  // opacity: 0.0;
+}
+
+.products-detail {
+
+  .layout {
+
+    padding-top: 2rem;
+
+    .col-1 {
+
+      @include shift($view-columns-padding);
+      @include span-columns($view-columns-span-split + 2);
+
+      .title {
+        font-size: $gamma + px;
+        margin-left: -2px;
+      }
+
+      .description {
+        margin-right: 10px;
+      }
+    }
+
+    .col-2 {
+      
+      @include span-columns($view-columns-span-split - 2);
+
+      text-align: right;
+
+      a {
+
+        display: block;
+      }
+
+      .price {
+        
+        font-size: $gamma + px;
+      }
+    }
+
+    img {
+       @include fill-parent();
+    }
+  }
+}
+
+

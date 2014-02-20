@@ -1,0 +1,31 @@
+<div class="products">
+
+  <div class="page-title">
+    <h2 sticky-element sticky-top="46" sticky-index="2000">{{ data.title }}</h2>
+  </div>
+  
+  <ul>
+    <li 
+      ng-repeat="product in data.products" 
+      ng-mouseenter="animateOn()"
+      ng-mouseleave="animateOff()"
+      animation-toggle
+      animation-toggle-selectors=".info"
+      animation-toggle-classname="slide-up"
+      image-loader 
+      >
+      <span us-spinner="{ color : '#01939A' }" class="spinner"></span>
+      <a href="#/products/{{ product.id }}">
+        <div class="cta">
+          <div class="triangle"></div>
+        </div>
+        <product-info product-require class="info">
+          <h4 class="title delta">{{ product.title | uppercase }}</h4>
+          <p class="price">{{ product.price | currency }}</p>
+          <p class="description">{{ product.description | characters:125 :false }}</p>
+        </product-info>
+        <img ng-src="{{ product.asset.image.thumb }}" alt="{{ product.title }}">
+      </a>
+    </li>
+  </ul>
+</div>

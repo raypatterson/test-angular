@@ -1,0 +1,23 @@
+{
+  "name": "idea-0000000001",
+  "dependencies": {},
+  "devDependencies": {
+    "angular": "~1.2.13",
+    "angular-animate": "~1.2.13",
+    "angular-cookies": "~1.2.13",
+    "angular-loader": "~1.2.13",
+    "angular-resource": "~1.2.13",
+    "angular-route": "~1.2.13",
+    "angular-sanitize": "~1.2.13",
+    "angular-route-segment": "~1.0.2",
+    "greensock-js": "~1.9.8",
+    "angular-truncate": "*",
+    "imagesloaded": "~3.0.4",
+    "angular-spinner": "~0.2.1",
+    "jquery": "~2.0.3",
+    "angular-ui-bootstrap": "~0.6.0",
+    "foundation": "zurb/bower-foundation#~5.1.1",
+    "spin.js": "~1.3.3",
+    "normalize-css": "~3.0.0"
+  }
+}

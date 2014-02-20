@@ -1,0 +1,29 @@
+@mixin set-span-columns($percent) {
+
+  $parent-columns-span: $view-columns-span;
+  $span-columns: $parent-columns-span * $percent;
+
+  @include span-columns($span-columns of $parent-columns-span);
+}
+
+.home {
+
+  // Tablet Landscape --> Desktop
+  @include from(4) {
+    @include set-span-columns(0.5);
+  }
+
+  // Tablet Portrait
+  @include at(3) {
+    @include set-span-columns(0.75);
+  }
+
+  // Mobile Portrait --> Mobile Landscape
+  @include to(2) {
+    @include set-span-columns(1);
+  }
+
+  p {
+    @include css-hyphens(auto);
+  }
+}

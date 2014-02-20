@@ -1,0 +1,39 @@
+@mixin set-grid($omega) {
+
+  $span-columns: $grid-columns / $omega;
+
+  @include span-columns($span-columns);
+  @include omega($omega + n);
+}
+
+.products {
+
+  ul {
+
+    li {
+
+      position: relative;
+      margin-bottom: 1%;
+
+      // Tablet Desktop ---> ????
+      @include from(5) {
+        @include set-grid(4);
+      }
+
+      // Tablet Landscape <--> Desktop
+      @include at(4) {
+        @include set-grid(3);
+      }
+
+      // Tablet Portrait <--> Tablet Landscape
+      @include at(3) {
+        @include set-grid(2);
+      }
+
+      // Mobile Portrait <--- Mobile Landscape 
+      @include to(2) {
+        @include set-grid(1);
+      }
+    }
+  }
+}

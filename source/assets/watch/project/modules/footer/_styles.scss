@@ -1,0 +1,19 @@
+footer {
+  
+  z-index: $z-index-footer;
+  position: fixed;
+  font-weight: 400;
+  left: 0px;
+  bottom: 0px;
+  height: 2rem;
+  width: 100%;
+
+  color: $color-white-1;
+  
+  @include background-fill-gradient;
+
+  p {
+    text-align: right;
+    padding: 5px 20px;
+  }
+}

@@ -1,0 +1,12 @@
+id: "paperismurder"
+namespace: "com.paperismurder.resume"
+name: "Ray Patterson"
+title: "Ray Patterson"
+description: "The online resume of Ray Patterson - User Experience Designer/Developer."
+keywords: "Ray Patterson, Resume, User Experience, Designer, Developer"
+url:
+  localhost: "http://localhost:8888"
+  development: "http://resume-development.paperismurder.com"
+  review: "http://resume-review.paperismurder.com"
+  staging: "http://resume-staging.paperismurder.com"
+  production: "http://resume.paperismurder.com"

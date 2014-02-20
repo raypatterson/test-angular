@@ -1,0 +1,44 @@
+$view-columns-span-split: $view-columns-span / 2;
+
+.overlay {
+
+  @include outer-container;
+
+  .overlay-container {
+
+    z-index: $z-index-overlay; 
+    position: fixed;
+
+    .overlay-content {
+
+      z-index: $z-index-overlay + 20; 
+
+      .overlay-close {
+
+        float: right;
+
+        @include cursor;
+
+        @include triangle(3rem, $color-enabled, up-right);
+      }
+
+      .overlay-close:hover {
+        @include triangle(3rem, $color-hover, up-right);
+      }
+    }
+
+    .overlay-cover {
+
+      z-index: $z-index-overlay + 10; 
+
+      @include background-image(linear-gradient(rgba($color-light, 1) 50%, rgba($color-light, 0.75) 100%));
+    }
+  }
+}
+
+.overlay-box {
+
+  display: block;
+
+  @include position(absolute, 0px 0px 0px 0px);
+}
