@@ -67,8 +67,7 @@ angular.module('myApp.controllers', [])
     , '$routeParams'
     , 'Products'
     ,
-  function($scope, $routeSegment, $routeParams, Products)
-  {
+  function($scope, $routeSegment, $routeParams, Products) {
 
     $scope.$log.info('ProductDetailCtrl');
 
@@ -96,6 +95,8 @@ angular.module('myApp.controllers', [])
 
       $el = $(".overlay .cover");
 
+      console.log('cover', $el);
+
       var duration = 0.25;
       var delay = 0;
 
@@ -108,6 +109,8 @@ angular.module('myApp.controllers', [])
       delay += duration;
 
       $el = $(".overlay .content");
+
+      console.log('content', $el);
 
       TweenLite.from($el, duration, {
         alpha: 0,

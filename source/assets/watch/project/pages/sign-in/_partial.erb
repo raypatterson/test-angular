@@ -1,10 +1,45 @@
 <div ng-controller="SignCtrl" class="sign-in">
-  
+
   <div class="page-title">
     <h2 sticky-element sticky-top="46" sticky-index="2000">Hello,</h2>
   </div>
   <h3 class="gamma">please sign in here.</h3>
+  <br>
+  <form name="form" novalidate class="sign-up form-horizontal" role="form">
+    <div class="form-group">
+      <label for="uEmail" class="col-sm-3 control-label">Email</label>
+      <div class="col-sm-5">
+        <input type="email" class="form-control" ng-model="user.email" name="uEmail" placeholder="Your Email" required />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pw1" class="col-sm-3 control-label">Password</label>
+      <div class="col-sm-5">
+        <input type="password" class="form-control" ng-model="pw1" name="pw1" placeholder="Your Password" required />
+      </div>
+    </div>
+    <div class="form-group">
+      <div ng-show="form.uEmail.$dirty && form.uEmail.$invalid">Invalid:
+        <span ng-show="form.uEmail.$error.required">Email Required.</span>
+        <span ng-show="form.uEmail.$error.email">This is not a valid email.</span>
+      </div>
+      <div ng-show="form.$error">
+        <span ng-show="form.pw2.$error.pwmatch" class="msg-error">Passwords don't match.</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-5">
+        <button
+          type="submit"
+          class="btn btn-default"
+          ng-click="signup(user)"
+          ng-disabled="form.$invalid || isUnchanged(user)"
+          >Sign In</button>
+      </div>
+    </div>
+  </form>
 
+<!--
   <form name="form" novalidate class="sign-in">
     <label>Email:</label><input type="email" ng-model="user.email" name="uEmail" required /><br />
     <label>Password:</lable><input type="password" ng-model="user.password" name="uPassword" required /><br />
@@ -20,11 +55,9 @@
             ng-disabled="form.$invalid || isUnchanged(user)">Sign In</button>
 
   </form>
-<!--
   <div>
     <pre>form = {{user | json}}</pre>
   </div>
--->
   <style type="text/css">
     .sign-in input.ng-invalid.ng-dirty {
       background-color: #FA787E;
@@ -34,4 +67,5 @@
       background-color: #78FA89;
     }
   </style>
+-->
 </div>
