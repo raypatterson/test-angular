@@ -147,4 +147,4 @@ angular.module('myApp.controllers', [])
       return angular.equals(user, $scope.master);
     };
 
-  }]);
+}]);

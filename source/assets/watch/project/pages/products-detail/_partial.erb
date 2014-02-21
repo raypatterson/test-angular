@@ -1,6 +1,7 @@
 <div class="overlay-box overlay-container" ng-init="showOverlay='overlay-box'">
   <div class="overlay-box overlay-content products-detail">
     <div class="overlay-close" close-btn ng-click="closeOverlay({path:'/products'})"></div>
+    <!-- Begin - layout -->
     <div class="layout">
       <div class="col-1">
         <h2 class="title">{{ data.product.title | uppercase }}</h2>
@@ -10,19 +11,19 @@
       </div>
       <div class="col-2">
         <span class="price">{{ data.product.price | currency }}</span>
-        <div image-loader>
-          <span us-spinner="{color: '#01939A'}" class="spinner"></span>
-          <a>
-            <img 
-              ng-repeat="image in data.product.asset.image.large" 
+        <carousel interval="5000" disable-animation="true">
+          <slide ng-repeat="image in data.product.asset.image.large" active="slide.active">
+            <img
               image-zoomer
-              ng-src="{{ image }}" 
+              ng-src="{{ image }}"
               alt="{{ data.product.title }}"
+              style="margin:auto;"
               >
-          </a>
-        </div>
+          </slide>
+        </carousel>
       </div>
     </div>
   </div>
+  <!-- End - layout -->
   <div class="overlay-box overlay-cover"></div>
 </div>

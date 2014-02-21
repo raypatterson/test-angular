@@ -17,9 +17,10 @@ $env = ENV[ 'ENVIRONMENT' ] || Cfg.get_localhost_env
 ############
 
 page "/sitemap.xml", :layout => false
+page "page/*", :layout => "page"
 
-::Middleman::Extensions.register :deploy_github, DeployGitHub
 ::Middleman::Extensions.register :deploy_aws, DeployAws
+::Middleman::Extensions.register :deploy_github, DeployGitHub
 ::Middleman::Extensions.register :deploy_headers, DeployHeaders
 
 set :protect_from_csrf, true
@@ -47,7 +48,7 @@ end
 
 activate :dotenv, :env => ".env-#{environment_type}"
 activate :autoprefixer
-activate :directory_indexes
+# activate :directory_indexes
 activate :automatic_image_sizes # Automatic image dimensions on image_tag helper
 
 # Paths #

@@ -2,11 +2,6 @@
  * Measurments
  */
 
-$iphone-portrait: (max-width 320px) (orientation portrait);
-$iphone-landscape: (max-width 480px) (orientation landscape);
-$ipad-portrait: (max-width 480px) (orientation portrait);
-$ipad-landscape: (max-width 760px) (orientation landscape);
-
 $slicer-breakpoints: 0 320px 480px 768px 1088px;
 //   1   Mobile Portrait        0px  -->   320px
 //   2   Mobile Landscape     320px  -->   480px
@@ -112,6 +107,8 @@ hr {
 
   @include position(absolute, 25% 0px 0px 50%);
 }
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 /**
  * Mixins

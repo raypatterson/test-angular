@@ -1,6 +1,10 @@
 @import "compass";
 @import "compass/reset";
 @import "normalize-css/normalize";
+@import "bootstrap-sass/lib/variables";
+@import "bootstrap-sass/lib/mixins";
+@import "bootstrap-sass/lib/grid";
+@import "bootstrap-sass/lib/carousel";
 @import "vendor/vars-bourbon";
 @import "bourbon";
 @import "neat";
@@ -20,15 +24,15 @@
 @import "project/modules/header/styles";
 @import "project/modules/content/styles";
 @import "project/modules/footer/styles";
+@import "project/modules/products-item/styles";
 
 
 /* Pages */
 /*********/
 
-@import "project/pages/home";
-@import "project/pages/products";
-@import "project/pages/products-item";
-@import "project/pages/products-detail";
+@import "project/pages/home/styles";
+@import "project/pages/products/styles";
+@import "project/pages/products-detail/styles";
 
 /* Notes */
 /*********/

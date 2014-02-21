@@ -27,11 +27,7 @@
 
 //= require angular/angular
 //= require angular-animate/angular-animate
-//= require angular-cookies/angular-cookies
-//= require angular-loader/angular-loader
-//= require angular-resource/angular-resource
 //= require angular-route/angular-route
-//= require angular-sanitize/angular-sanitize
 
 
 /**
@@ -42,6 +38,12 @@
 //= require angular-truncate/dist/angular-truncate
 //= require angular-route-segment/build/angular-route-segment
 
+/**
+ * Bootstrap
+ */
+
+//= require angular-bootstrap/ui-bootstrap
+//= require angular-bootstrap/ui-bootstrap-tpls
 
 /**
  * Project

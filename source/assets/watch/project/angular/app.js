@@ -5,12 +5,13 @@
 angular.module('myApp',
 
     [
-      'ngRoute'
+      , 'ngRoute'
       , 'ngAnimate'
       , 'route-segment'
       , 'view-segment'
       , 'truncate'
       , 'angularSpinner'
+      , 'ui.bootstrap'
       , 'myApp.filters'
       , 'myApp.services'
       , 'myApp.directives'
@@ -42,19 +43,19 @@ angular.module('myApp',
     .when('/sign-in', 'signin')
 
   .segment('home', {
-    templateUrl: 'assets/partials/home.html',
+    templateUrl: 'page/home.html',
     controller: 'HomeCtrl'
   })
 
   .segment('products', {
-    templateUrl: 'assets/partials/products.html',
+    templateUrl: 'page/products.html',
     controller: 'ProductCtrl'
   })
 
   .within()
 
   .segment('detail', {
-    templateUrl: 'assets/partials/products-detail.html',
+    templateUrl: 'page/products-detail.html',
     controller: 'ProductDetailCtrl',
     dependencies: ['id']
   })
@@ -62,12 +63,12 @@ angular.module('myApp',
   .up()
 
   .segment('signup', {
-    templateUrl: 'assets/partials/sign-up.html',
+    templateUrl: 'page/sign-up.html',
     controller: 'SignCtrl'
   })
 
   .segment('signin', {
-    templateUrl: 'assets/partials/sign-in.html',
+    templateUrl: 'page/sign-in.html',
     controller: 'SignCtrl'
   })
 
