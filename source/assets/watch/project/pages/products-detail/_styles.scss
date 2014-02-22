@@ -1,10 +1,10 @@
 .zoomContainer {
-  z-index: $z-index-overlay + 30; 
+  z-index: $z-index-overlay + 30;
 }
 
 #demo-container {
   position: absolute;
-  z-index: $z-index-overlay + 500; 
+  z-index: $z-index-overlay + 500;
   top: 0;
   left: 0;
   width: 200px;
@@ -34,10 +34,28 @@
     }
 
     .col-2 {
-      
+
       @include span-columns($view-columns-span-split - 2);
 
       text-align: right;
+
+      .carousel-inner {
+        max-height: 75vh;
+        width: auto;
+      }
+
+      .carousel {
+        max-height: 75vh;
+        width: auto;
+      }
+
+      .carousel-control.left {
+        background: white;
+      }
+
+      .carousel-control.right {
+        background: white;
+      }
 
       a {
 
@@ -45,13 +63,15 @@
       }
 
       .price {
-        
+
         font-size: $gamma + px;
       }
     }
 
     img {
        @include fill-parent();
+       max-height: 75vh;
+       width: auto;
     }
   }
 }
